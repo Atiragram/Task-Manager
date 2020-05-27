@@ -124,7 +124,7 @@ class TaskController extends AbstractController
      *     response=Response::HTTP_CREATED,
      *     description="Returns if task was successfully created"
      * )
-    @SWG\Response(
+     * @SWG\Response(
      *     response=Response::HTTP_BAD_REQUEST,
      *     description="Returns if task data is not valid"
      * )

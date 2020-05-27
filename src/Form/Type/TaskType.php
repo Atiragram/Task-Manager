@@ -45,7 +45,8 @@ class TaskType extends AbstractType
     {
         parent::configureOptions($resolver);
 
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
                 'data_class' => TaskModel::class,
                 'csrf_protection' => false,
             ]
