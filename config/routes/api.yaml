@@ -1,0 +1,8 @@
+tasks:
+  resource: App\Controller\TaskController
+
+users:
+  resource: App\Controller\UserController
+
+api_login_check:
+  path: /login_check
