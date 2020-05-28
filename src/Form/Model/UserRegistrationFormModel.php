@@ -13,8 +13,8 @@ class UserRegistrationFormModel
      * @Assert\Length(
      *     min="5",
      *     max="64",
-     *     minMessage="Username length cannot be less than {{ limit }}.",
-     *     maxMessage="Username length cannot be more than {{ limit }}.",
+     *     minMessage="Username length cannot be less than {{ limit }} characters.",
+     *     maxMessage="Username length cannot be more than {{ limit }} characters.",
      * )
      */
     private ?string $username = null;
@@ -24,8 +24,8 @@ class UserRegistrationFormModel
      * @Assert\Length(
      *     min="5",
      *     max="64",
-     *     minMessage="Fisrt name length cannot be less than {{ limit }}.",
-     *     maxMessage="First name length cannot be more than {{ limit }}.",
+     *     minMessage="Fisrt name length cannot be less than {{ limit }} characters.",
+     *     maxMessage="First name length cannot be more than {{ limit }} characters.",
      * )
      */
     private ?string $firstName = null;
@@ -35,8 +35,8 @@ class UserRegistrationFormModel
      * @Assert\Length(
      *     min="5",
      *     max="64",
-     *     minMessage="Last name length cannot be less than {{ limit }}.",
-     *     maxMessage="Last name length cannot be more than {{ limit }}.",
+     *     minMessage="Last name length cannot be less than {{ limit }} characters.",
+     *     maxMessage="Last name length cannot be more than {{ limit }} characters.",
      * )
      */
     private ?string $lastName = null;
@@ -45,8 +45,8 @@ class UserRegistrationFormModel
      * @Assert\Length(
      *     min=5,
      *     max=64,
-     *     minMessage="Password length cannot be less than {{ limit }}.",
-     *     maxMessage="Password length cannot be more than {{ limit }}.",
+     *     minMessage="Password length cannot be less than {{ limit }} characters.",
+     *     maxMessage="Password length cannot be more than {{ limit }} characters.",
      * )
      * @Assert\NotBlank(message="Password cannot be blank.")
      */

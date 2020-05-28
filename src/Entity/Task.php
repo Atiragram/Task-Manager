@@ -8,6 +8,7 @@ use App\Form\Model\TaskModel;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(
@@ -51,7 +52,7 @@ class Task
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id", nullable=false)
      */
-    private User $user;
+    private UserInterface $user;
 
     /**
      * @ORM\Column(name="due_date", type="datetime")
@@ -88,7 +89,7 @@ class Task
         string $title,
         string $description,
         DateTimeImmutable $dueDate,
-        User $user
+        UserInterface $user
     ) {
         $this->title = $title;
         $this->description = $description;
@@ -97,7 +98,7 @@ class Task
         $this->createdDate = new DateTimeImmutable();
     }
 
-    public static function createFromModel(TaskModel $taskModel, User $user): self
+    public static function createFromModel(TaskModel $taskModel, UserInterface $user): self
     {
         return new self(
             $taskModel->getTitle(),
@@ -105,6 +106,46 @@ class Task
             $taskModel->getDueDate(),
             $user
         );
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getUser(): UserInterface
+    {
+        return $this->user;
+    }
+
+    public function getDueDate(): DateTimeImmutable
+    {
+        return $this->dueDate;
+    }
+
+    public function getCreatedDate(): DateTimeImmutable
+    {
+        return $this->createdDate;
+    }
+
+    public function getDeletedDate(): ?DateTimeImmutable
+    {
+        return $this->deletedDate;
+    }
+
+    public function isDeleted(): bool
+    {
+        return $this->isDeleted;
+    }
+
+    public function isCompleted(): bool
+    {
+        return $this->isCompleted;
     }
 
     public function delete()

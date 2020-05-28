@@ -12,7 +12,7 @@ class TaskModel
     /**
      * @Assert\NotBlank(message="Title cannot be blank.")
      * @Assert\Length(
-     *     min="5",
+     *     min="2",
      *     max="128",
      *     minMessage="Task title cannot be less than {{ limit }} characters.",
      *     maxMessage="Task title cannot be more than {{ limit }} characters.",
@@ -21,7 +21,7 @@ class TaskModel
     private ?string $title = null;
 
     /**
-     * @Assert\NotBlank(message="First name cannot be blank.")
+     * @Assert\NotBlank(message="Description cannot be blank.")
      * @Assert\Length(
      *     min="5",
      *     max="255",

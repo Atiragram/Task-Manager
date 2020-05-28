@@ -57,7 +57,7 @@ class User implements UserInterface
      */
     private array $roles;
 
-    public function __construct(
+    private function __construct(
         string $firstName,
         string $lastName,
         string $username
@@ -101,6 +101,16 @@ class User implements UserInterface
     public function getUsername(): string
     {
         return $this->username;
+    }
+
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
     }
 
     public function eraseCredentials()
