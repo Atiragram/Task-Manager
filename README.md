@@ -14,12 +14,12 @@ Copy passphrase and past it to your .env file to the `JWT_PASSPHRASE` variable.
 
 Add a value for `NGINX_PUBLIC_PORT` variable for the next step.
 
-###Start containers
+### Start containers
 ```bash
 docker-compose up -d --build
 ```
 
-###To run symfony commands use
+### To run symfony commands use
 ```bash
 docker-compose exec php bin/console
 ```
