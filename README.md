@@ -1,6 +1,6 @@
 ## Project setup 
 
-###Create .env file
+### Create .env file
 
 Create .env based on the .env.template.
 
